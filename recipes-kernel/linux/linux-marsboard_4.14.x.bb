@@ -3,7 +3,7 @@
 # Adapted to MarS Board by Frank Bauernoeppel
 
 require recipes-kernel/linux/linux-imx.inc
-require recipes-kernel/linux/linux-dtb.inc
+# require recipes-kernel/linux/linux-dtb.inc
 
 SUMMARY = "Linux kernel for MarS Board"
 
@@ -18,8 +18,8 @@ do_compile_prepend () {
 }
 
 LOCALVERSION = "-2.0.0_ga+yocto"
-SRCBRANCH = "boundary-imx_4.1.15_2.0.0_ga"
-SRCREV = "f7cc79eff5f3790104e85f00528cadf8572c38ea"
+SRCBRANCH = "boundary-imx_4.14.x_2.0.0_ga"
+SRCREV = "2bfd9b990c4d5ca3df0d3e78b64b125191e74ad9"
 
 DEPENDS += "lzop-native bc-native"
 
