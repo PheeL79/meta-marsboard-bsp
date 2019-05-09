@@ -1,0 +1,16 @@
+--- ./yoctoproject/poky/meta/lib/oe/utils.py	2019-05-09 13:02:30.808279961 -0700
++++ ./marsboard/sources/poky/meta/lib/oe/utils.py	2019-05-06 04:55:38.012815979 -0700
+@@ -320,7 +320,12 @@
+     if errors:
+         msg = ""
+         for (e, tb) in errors:
+-            msg = msg + str(e) + ": " + str(tb) + "\n"
++            if isinstance(e, subprocess.CalledProcessError) and e.output:
++                msg = msg + str(e) + "\n"
++                msg = msg + "Subprocess output:"
++                msg = msg + e.output.decode("utf-8", errors="ignore")
++            else:
++                msg = msg + str(e) + ": " + str(tb) + "\n"
+         bb.fatal("Fatal errors occurred in subprocesses:\n%s" % msg)
+     return results
+ 

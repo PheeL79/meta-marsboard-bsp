@@ -1,0 +1,11 @@
+--- ./yoctoproject/poky/meta/classes/buildhistory.bbclass	2019-05-09 13:02:30.784281927 -0700
++++ ./marsboard/sources/poky/meta/classes/buildhistory.bbclass	2019-05-09 13:53:18.680841826 -0700
+@@ -179,7 +179,7 @@
+             return None
+ 
+     def sortpkglist(string):
+-        pkgiter = re.finditer(r'[a-zA-Z0-9.+-]+( \([><=]+[^)]+\))?', string, 0)
++        pkgiter = re.finditer(r'[a-zA-Z0-9.+-_]+( \([><=]+[^)]+\))?', string, 0)
+         pkglist = [p.group(0) for p in pkgiter]
+         pkglist.sort()
+         return ' '.join(pkglist)

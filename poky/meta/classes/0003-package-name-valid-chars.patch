@@ -1,0 +1,22 @@
+--- ./yoctoproject/poky/meta/classes/insane.bbclass	2019-05-09 13:02:30.788281599 -0700
++++ ./marsboard/sources/poky/meta/classes/insane.bbclass	2019-05-06 05:05:44.111004207 -0700
+@@ -951,8 +951,8 @@
+         return
+ 
+     import re
+-    # The package name matches the [a-z0-9.+-]+ regular expression
+-    pkgname_pattern = re.compile(r"^[a-z0-9.+-]+$")
++    # The package name matches the [a-z0-9.+-_]+ regular expression
++    pkgname_pattern = re.compile(r"^[a-z0-9.+-_]+$")
+ 
+     taskdepdata = d.getVar("BB_TASKDEPDATA", False)
+     taskdeps = set()
+@@ -987,7 +987,7 @@
+         # Check package name
+         if not pkgname_pattern.match(package):
+             package_qa_handle_error("pkgname",
+-                    "%s doesn't match the [a-z0-9.+-]+ regex" % package, d)
++                    "%s doesn't match the [a-z0-9.+-_]+ regex" % package, d)
+ 
+         warn_checks, error_checks = parse_test_matrix("QAPATHTEST")
+         package_qa_walk(warn_checks, error_checks, package, d)
