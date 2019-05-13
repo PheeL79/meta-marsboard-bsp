@@ -1,9 +1,0 @@
---- ./local.conf	2019-05-13 08:57:49.713747454 -0700
-+++ /home/pheel/Develop/local.conf	2019-05-13 09:01:00.068947465 -0700
-@@ -1,5 +1,6 @@
- MACHINE ??= 'marsboard'
- DISTRO ?= 'fslc-framebuffer'
-+DISTRO_FEATURES_remove = "x11 touchscreen"
- PACKAGE_CLASSES ?= "package_rpm"
- EXTRA_IMAGE_FEATURES ?= "debug-tweaks"
- USER_CLASSES ?= "buildstats image-mklibs image-prelink"

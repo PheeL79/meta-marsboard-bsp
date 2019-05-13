@@ -1,8 +1,0 @@
---- ./bblayers.conf	2019-05-13 08:57:39.838160536 -0700
-+++ /home/pheel/Develop/bblayers.conf	2019-05-13 09:00:00.590765007 -0700
-@@ -14,4 +14,5 @@
-   ${BSPDIR}/sources/meta-freescale \
-   ${BSPDIR}/sources/meta-freescale-3rdparty \
-   ${BSPDIR}/sources/meta-freescale-distro \
-+  ${BSPDIR}/sources/meta-marsboard-bsp \
- "
