@@ -11,7 +11,7 @@ IMAGE_FEATURES += " \
 	package-management \
 "
 
-IMAGE_INSTALL_append += " cmake strace tree htop i2c-tools canutils"
+IMAGE_INSTALL_append += " cmake strace tree htop i2c-tools canutils mc"
 
 IMAGE_INSTALL_append += " \
     packagegroup-fsl-gstreamer1.0 \
@@ -31,7 +31,7 @@ IMAGE_INSTALL_append += " \
 "
 
 # Wlan stuff
-IMAGE_INSTALL_append += " linux-firmware iw wireless-tools wpa-supplicant"
+IMAGE_INSTALL_append += " linux-firmware iw wpa-supplicant"
 
 # for WiFi access point, needs meta-openembedded/meta-networking layer in bblayers.conf
 #IMAGE_INSTALL_append += " hostapd dnsmasq iptables tcpdump crda"
